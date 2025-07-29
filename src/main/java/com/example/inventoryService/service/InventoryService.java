@@ -41,7 +41,8 @@ public class InventoryService {
                 .orElse(
                         new Inventory(null, productId, 0)
                 );
-        // id = null for new document, MongoDB will auto-generate an _id if not provided (i.e. for new records).
+        // id = null for a new document,
+        // MongoDB will auto-generate an _id if not provided (i.e., for new documents).
 
         // Set or update quantity
         inv.setQuantity(qty);

@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  inventory-service:
+    build: .
+    container_name: inventory-service
+    ports:
+      - "8587:8587"                         # Expose container port to host
+    env_file:
+      - .env                               # Load MONGODB_URI and other vars
+    networks:
+      - backend                            # Shared network
+
+networks:
+  backend:
+    driver: bridge
